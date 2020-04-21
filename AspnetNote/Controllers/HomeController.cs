@@ -23,6 +23,16 @@ namespace AspnetNote.Controllers
             return View();
         }
 
+        /// <summary>
+        /// 로그인 성공 페이지 
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult LoginSuccess()
+        {
+            return View();
+        }
+
+
         public IActionResult Privacy()
         {
             return View();

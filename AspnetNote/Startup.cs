@@ -24,6 +24,17 @@ namespace AspnetNote
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            // DI 의존성 주입.
+
+            // Session - 서비스에 세션 등록함.
+            services.AddSession();
+
+
+            // Identity
+
+            // Web API 관련 기능
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +57,9 @@ namespace AspnetNote
 
             app.UseAuthorization();
 
+            // Application에서 사용하겠다.
+            app.UseSession();
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
