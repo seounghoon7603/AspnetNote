@@ -18,13 +18,13 @@ namespace AspnetNote.Models
         /// <summary>
         /// 게시물 제목
         /// </summary>
-        [Required] // Not Null 어노테이션
+        [Required(ErrorMessage ="제목을 입력해주세요.")] // Not Null 어노테이션
         public String NoteTitle { get; set; }
 
         /// <summary>
         /// 게시물 내용
         /// </summary>
-        [Required] // Not Null 어노테이션
+        [Required(ErrorMessage = "내용을 입력하세요.")] // Not Null 어노테이션
         public String NoteContents { get; set; }
 
         /// <summary>

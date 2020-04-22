@@ -1,0 +1,26 @@
+﻿
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header">상세 읽기 - @Model.NoteTitle</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-10">
+        <div class="card panel panel-default">
+            <div class="card-header panel-default">
+                @Model.NoteTitle
+            </div>
+            <div class="card-body panel-body">
+                @* html 태그들을 인식해준다. *@
+                @Html.Raw(Model.NoteContents);  
+            </div>
+            <div class="card-footer text-right panel-footer">
+                <div class="col-sm-12">
+                    <a class="btn btn-primary" asp-controller="Note" asp-action="Index">목록</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
