@@ -1,0 +1,99 @@
+url
+
+asp.net mvc
+
+http://www.example.com/
+--> Home Controller - Index Action
+
+http://www.example.com/Home/Index
+
+Razor Syntax
+- JSP 의 자바코드 <% %>
+- ASP.NET에서도 페이지 내에서 C#코드
+1. 골뱅이 기호 사용. @{ }
+2. if , for , foreach 구문
+
+-----------------------------------------------
+
+C# DB통신
+1. ADO.NET -- 아주 기본적인
+- Winform, Classic ASP
+
+2. Enterprise Library 5
+- 쿼리문을 직접 작성 --> 값을 처리
+- ADO.NET보다 코어기능이 좋아서 사용
+- Logging처리
+
+1 , 2 의 문제점 --> 쿼리 직접 작성. -> 오류발생확률 증가
+
+ORM ( 쿼리와 코드를 연동시켜 직접쿼리를 작성하지 않고 DB통신을 할 수 있게 해주는 도구 )
+Java = JPA ( 기준 ) --> Hibernate 
+C# = EntityFramwork 1.0 ~ 7.0
+       Mapper
+
+ASP.NET Core --> EntityFramwork Core
+
+EntityFramwork 개발방식 2가지
+1) Database First 방식 ( 규모있는 회사 )
+- DBA가 이미 다 설계해둠 , 물리적 DB 모두 완성 상태.
+=> DB기준으로 App개발
+
+2) Code First 방식 ( 스타트업 )
+- Code -> DB 생성해서 App 개발
+
+// Nuget 관리 --> EntityFramworkCore , SqlServer , Tools 검색해서 설치
+
+Model Class -> DbContext -> 실제 테이블 생성
+
+User 모델 -> 사용자
+Note모델 -> 게시판
+
+User
+사용자 번호(PK)
+사용자 이름
+사용자 ID
+사용자 Password
+
+Note ( 게시판)
+게시물 번호(PK)
+게시물 제목
+게시물 내용
+작성자 ( 숫자 - 사용자 번호 )
+
+------
+사용자 로그인 , 회원가입
+
+회원가입 -> 사용자 정보 입력 -> DB 저장.
+로그인 -> 사용자 정보를 입력 -> 사용자 정보를 보유
+
+Spring Security
+
+ASP.NET Identity
+- 사용자 로그인(인증)
+- 사용자 Role ( Admin , User , PowerUser )
+- SMS 인증 , Email 인증
+
+Session을 이용한 로그인, 회원가입 구현
+
+로그인 2가지 방법론
+#1. Session
+- 웹 서버가 사용자 정보를 메모리에 담아놓고 
+-> 보안성이 높다.
+-> 웹 서버 메모리 부하 높아짐.
+
+#2. Cookie
+- 웹 서버 로그인 -> 사용자 정보 -> 브라우저 전달
+- 웹 서버의 부하가 낮아진다.
+- 보안성이 낮음
+
+# 결론 : Cookie
+- Cookie -> 암호화 -> 복호화 / 위변조의 위험
+- SSL
+
+SSL -> 유료 ( 매년 20~100만원 )
+
+// 서버통신
+GET : DB--> 받는다.
+POST : DB <- 전달
+
+// Nuget 에서 Session 설치
